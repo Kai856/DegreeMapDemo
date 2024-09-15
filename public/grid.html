@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Enrollment Overview</title>
+    <link rel="stylesheet" href="grid.css"> <!-- Linking to external CSS file -->
+</head>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+      <div class="logo">
+          <h2>DegreeMap</h2>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="index.html">Home</a></li>
+              <li class="active"><a href="grid.html">Credits <span class="beta-tag">Beta</span></a></li>
+              <li><a href="#">Classes</a></li>
+              <li><a href="#">JumboAI</a></li>
+              <li><a href="#">Settings</a></li>
+          </ul>
+      </nav>
+      <div class="sign-in">
+          <a href="#">Sign In</a>
+      </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Ripple and Gradient Background for Animation -->
+    <div class="ripple-container">
+        <!-- Ripple Animation and Time Display -->
+        <div class="ripple-background">
+            <div class="circle xxlarge shade1"></div>
+            <div class="circle xlarge shade2"></div>
+            <div class="circle large shade3"></div>
+            <div class="circle medium shade4"></div>
+            <div class="circle small shade5"></div>
+        </div>
+
+        <!-- Semester and Grade Information Box -->
+        <div class="semester-grade-box">
+            <!-- Semester and Grade Information -->
+            <div class="semester-grade-info">
+                <h2>Semester 1</h2>
+                <h3>Freshman Year</h3>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="semester-navigation">
+                <button id="prev-semester">&lt;</button>
+                <span id="current-semester">Semester 1</span>
+                <button id="next-semester">&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar Section -->
+    <div class="progress-section">
+        <h3>Progress toward Graduation</h3>
+        <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <p><span id="completed-credits">0</span>/120 Credits Completed</p>
+    </div>
+
+    <!-- Course Enrollment Table -->
+    <div class="table-container">
+        <h2>Fall Semester 2024 - First Year</h2>
+
+        <table class="course-table">
+            <thead>
+                <tr>
+                    <th>Course Title</th>
+                    <th>Enrollment Status</th>
+                    <th>Grading Option</th>
+                    <th>Credit Hours</th>
+                </tr>
+            </thead>
+            <tbody id="course-table-body"> <!-- Added id for tbody -->
+                <tr>
+                    <td><input type="text" placeholder="Enter course title"></td>
+                    <td>
+                        <select>
+                            <option>Enrolled</option>
+                            <option>Waitlisted</option>
+                            <option>Completed</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select>
+                            <option>Graded</option>
+                            <option>Pass/Fail</option>
+                            <option>Audit</option>
+                        </select>
+                    </td>
+                    <td><input type="number" placeholder="Credit hours" min="0" class="credit-input"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Credits:</td>
+                    <td><input type="number" id="total-credits" placeholder="0" readonly></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button id="add-row-button" class="add-row-button">Add Course</button>
+    </div>
+  </main>
+
+  <script src="grid.js"></script> 
+</body>
+</html>

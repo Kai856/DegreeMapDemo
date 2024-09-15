@@ -1,0 +1,358 @@
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* Ripple Background */
+.ripple-container {
+    position: relative;
+    height: 450px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #3E8CFD;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.ripple-background {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    animation: ripple 15s infinite;
+    box-shadow: 0px 0px 1px 0px #508fb9;
+    z-index: 0;
+}
+
+.small {
+    width: 100px;
+    height: 100px;
+    left: -50px;
+    bottom: -50px;
+    background: radial-gradient(circle, #f1f8ff, #97caff);
+}
+
+.medium {
+    width: 200px;
+    height: 200px;
+    left: -100px;
+    bottom: -100px;
+    background: radial-gradient(circle, #e0f0ff, #6fbcff);
+}
+
+.large {
+    width: 300px;
+    height: 300px;
+    left: -150px;
+    bottom: -150px;
+    background: radial-gradient(circle, #d0e8ff, #4fa7ff);
+}
+
+.xlarge {
+    width: 400px;
+    height: 400px;
+    left: -200px;
+    bottom: -200px;
+    background: radial-gradient(circle, #bfdfff, #2f92ff);
+}
+
+.xxlarge {
+    width: 500px;
+    height: 500px;
+    left: -250px;
+    bottom: -250px;
+    background: radial-gradient(circle, #afc6ff, #0f7dff);
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0.8);
+    }
+}
+
+/* Semester and Grade Information */
+.semester-grade-info {
+    text-align: center;
+    color: #fff; /* White text */
+    margin-bottom: 20px;
+}
+
+.semester-grade-info h2 {
+    font-size: 36px; /* Larger font for semester */
+    margin: 0;
+    padding: 0;
+}
+
+.semester-grade-info h3 {
+    font-size: 24px; /* Slightly smaller font for grade */
+    color: #C5C6C7; /* Light grey for grade */
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Time Display */
+.time-display {
+    margin-top: 20px;
+    z-index: 1;
+}
+
+.clock {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+}
+
+.clock h1 {
+    font-size: 36px;
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.date-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.date-navigation button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    margin: 0 8px;
+    transition: background-color 0.3s ease;
+}
+
+.date-navigation button:hover {
+    background-color: #444;
+}
+
+.date-navigation span {
+    font-size: 20px;
+    color: #C5C6C7;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 240px; /* Fixed width for the sidebar */
+    background-color: #1F2833;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-right: 2px solid #333;
+    z-index: 2; /* Ensure the sidebar stays above the content */
+}
+
+.logo {
+    text-align: center;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.sidebar nav ul li {
+    margin: 25px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #C5C6C7;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.sidebar nav ul li.active a, .sidebar nav ul li a:hover {
+    color: #C5C6C7;
+    background-color: #1F2833;
+    border-radius: 8px;
+}
+
+.beta-tag {
+    background-color: #2E3A46;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 6px;
+}
+
+.sign-in {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.sign-in a {
+    color: #C5C6C7;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 240px; /* Match the sidebar width */
+    padding: 20px;
+    background-color: #000;
+    text-align: left;
+    max-width: calc(100% - 240px); /* Ensure content fits beside the sidebar */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content */
+    box-sizing: border-box; /* Ensure padding is accounted for */
+}
+
+/* Progress Bar Section */
+.progress-section {
+    margin: 40px auto;
+    text-align: center;
+    color: #93c5fd;
+    width: 100%; /* Full width of the main content */
+    max-width: 900px; /* Restrict the max width */
+}
+
+.progress-container {
+    width: 80%;
+    background-color: #e0f2fe;
+    border-radius: 25px;
+    margin: 20px auto;
+    height: 30px;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #60a5fa;
+    border-radius: 25px;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Table Container */
+.table-container {
+    width: 100%; /* Full width of the main content */
+    max-width: 900px; /* Restrict the max width */
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.course-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    color: #fff;
+}
+
+.course-table th, .course-table td {
+    padding: 14px 18px;
+    border: 1px solid #2b2b2b;
+}
+
+.course-table thead th {
+    background-color: #262626;
+    font-weight: bold;
+    border-bottom: 2px solid #3a3a3a;
+}
+
+.course-table tbody tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+
+.course-table tbody tr:hover {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.course-table tfoot td {
+    font-weight: bold;
+    background-color: #333;
+    border-top: 2px solid #3a3a3a;
+}
+
+.course-table tfoot td:first-child {
+    text-align: right;
+}
+
+/* Input and Select Styling */
+input[type="text"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Button Styling */
+.add-row-button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.5);
+}
+
+.add-row-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+.add-row-button:active {
+    transform: translateY(1px);
+}
